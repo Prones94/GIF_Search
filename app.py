@@ -16,7 +16,7 @@ def index():
     }
     # TODO: Make an API call to Tenor using the 'requests' library
     r = requests.get("https://api.tenor.com/v1/search?", params=payload)
-    data = r.json
+    data = r.json()
     print(data)
     # TODO: Get the first 10 results from the search results
 
