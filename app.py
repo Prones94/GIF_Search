@@ -19,7 +19,7 @@ def index():
     data = r.json
     print(data)
     # TODO: Get the first 10 results from the search results
-
+results = data['results'][0:9]
     # TODO: Render the 'index.html' template, passing the gifs as a named parameter
 
     return render_template("index.html")
