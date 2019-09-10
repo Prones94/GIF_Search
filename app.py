@@ -18,14 +18,14 @@ def index():
     req = requests.get("https://api.tenor.com/v1/search?", params=payload)
     data = req.json()
     # TODO: Get the first 10 results from the search results
-<<<<<<< HEAD
+
     results = data["results"][0:9]
 
 
     # TODO: Render the 'index.html' template, passing the gifs as a named parameter
 
     return render_template("index.html",results = results)
-=======
+
     results = data
     return results
 
@@ -35,7 +35,7 @@ def index():
         "index.html",
         results=results
         )
->>>>>>> 29f51ee04fdb734909ee743af03f2268e1f9f393
+
 
 if __name__ == '__main__':
     app.run(debug=True)
