@@ -10,17 +10,24 @@
     <!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
 
 
+
+    <!-- TODO: Make an HTML form containing a search box and a submit button to add the search term to the query string -->
     <form>
-        <input type="text" name="search">
+        <input type="text" name="search" placeholder="Search">
         <input type="submit">
     </form action='/pull'>
-
-    <!-- TODO: Make an HTML form containing a search box and a submit button to add
-
-        the search term to the query string -->
     
     <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
-    
+    {% if results %}
+
+        <ul>
+            {% for gif in results %}
+                <li><a href="{{ gif.url }}"></a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        Found no gif
+    {% endif %}
     <!-- TODO: For each gif, include the 'gif.html' template to display it -->
 </body>
 </html>
