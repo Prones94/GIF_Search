@@ -1,34 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
-    <!-- TODO: Make an HTML form containing a search box and a submit button to add the search term to the query string -->
-    <form>
-        <input type="text" name="search" placeholder="Search">
-        <input type="submit">
-    </form action='/pull'>
-    
-    <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
-    {% if results %}
+{% extends 'base.html' %}
+{% block title %}GIF Search{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+<form>
+    <h1>Welcome to Our GIF Search!</h1>
+    <p>Enter a term into the search bar and laugh yourself silly</p>
+    <input type="text" name="search" placeholder="Search">
+    <input type="submit">
+</form action='/pull'>
+{% if results %}
+<ul>
+    {% for gif in results %}
+    <img src={{gif.media[0].mediumgif.url }}>
+    {% endfor %}
+</ul>
+{% else %}
+    Found no gif
+{% endif %}
+{% endblock %}
 
-        <ul>
-            {% for gif in results %}
-            <img src={{gif.media[0].mediumgif.url }}>
-            {% endfor %}
-        </ul>
-    {% else %}
-        Found no gif
-    {% endif %}
-
-    <!-- TODO: Make an HTML form containing a search box and a submit button to add
-        the search term to the query string -->
+<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
+<!-- TODO: Make an HTML form containing a search box and a submit button to add
+    the search term to the query string -->
     <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->    
     <!-- TODO: For each gif, include the 'gif.html' template to display it -->
-</body>
-</html>
+    <!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
+    <!-- TODO: Make an HTML form containing a search box and a submit button to add the search term to the query string -->
