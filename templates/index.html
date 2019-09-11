@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
-<<<<<<< HEAD
+
 
 
 
@@ -23,34 +23,16 @@
 
         <ul>
             {% for gif in results %}
-                <li><a href="{{ gif.url }}"></a></li>
+            <img src={{gif.media[0].mediumgif.url }}>
             {% endfor %}
         </ul>
     {% else %}
         Found no gif
     {% endif %}
-=======
+
     <!-- TODO: Make an HTML form containing a search box and a submit button to add
         the search term to the query string -->
     <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->    
->>>>>>> 29f51ee04fdb734909ee743af03f2268e1f9f393
     <!-- TODO: For each gif, include the 'gif.html' template to display it -->
-    {% extends 'base.html' %}
-    
-    {% block body %}
-    <div class="navbar-container">
-        <form action="/pull">
-            <input type="text" name="search">
-            <input type="submit">
-        </form action='/pull'>
-    </div>
-    {% if results %}
-    <ul>
-        {% for gif in results %}
-        <li> {{ gif }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endblock %}
 </body>
 </html>
