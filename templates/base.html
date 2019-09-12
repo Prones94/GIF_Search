@@ -2,8 +2,7 @@
 <html>
 <head>
     {% block head %}
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %} GIF Search</title>
      {%  endblock %}
@@ -13,6 +12,11 @@
         {% block body %}
         <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
         {%  endblock %}
+    </div>
+    <div class="footer">
+        {% block footer %}
+        <h3>&copy Copyright 2019 by Ian Rones and Mondale Felix(The YEET)</h3>
+        {% endblock %}
     </div>
 </body>
 </html>
